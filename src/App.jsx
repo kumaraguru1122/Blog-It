@@ -1,10 +1,29 @@
 import React from "react";
+import { Routes, Route } from "react-router";
+import MainLayout from "./layouts/MainLayout";
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Blogs from "./pages/Blogs";
+import BlogDetail from "./pages/BlogDetail";
 
 const App = () => {
   return (
-    <div className="text-7xl text-blue-700 text-center grid place-content-center min-h-screen font-bold">
-      BlogIt
-    </div>
+    <Routes>
+      <Route path="/" element={<MainLayout />}>
+        <Route index element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/blogs" element={<Blogs />} />
+        <Route path="/blogs/:id" element={<BlogDetail />} />
+        <Route
+          path="*"
+          element={
+            <h1 className="text-5xl font-bold text-center m-8">
+              404 not found
+            </h1>
+          }
+        />
+      </Route>
+    </Routes>
   );
 };
 
