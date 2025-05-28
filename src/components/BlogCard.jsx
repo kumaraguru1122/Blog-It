@@ -1,20 +1,21 @@
 import React from "react";
 import { NavLink } from "react-router";
+import ReactMarkdown from "react-markdown";
 
-const BlogCard = () => {
+const BlogCard = ({ id, title }) => {
+ let brief = `
+  Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis id provident assumenda laborum temporibus ut, ipsa autem maiores a deleniti at molestias quis sequi....
+  `;
   return (
     <div className=" border-2 rounded-md p-4">
-      <h3 className="text-xl font-bold mb-2">Job title</h3>
-      <p className="text-lg italic">
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ab
-        perspiciatis eveniet dolorem blanditiis, provident, magnam eos
-        exercitationem adipisci quo consequatur velit. Molestiae nesciunt culpa
-        qui nihil minima tempore sint consectetur ad totam, veritatis cupiditate
-        tempora iure, debitis, alias ratione earum.....
-      </p>
+      <h3 className="text-xl font-bold mb-2">{title}</h3>
+      <ReactMarkdown>{brief}</ReactMarkdown>
       <div className="flex justify-between mt-5">
         <button></button>
-        <NavLink to="" className="bg-amber-950 text-amber-50 p-2 rounded-md">
+        <NavLink
+          to={`${id}`}
+          className="bg-amber-950 text-amber-50 p-2 rounded-md"
+        >
           click to view
         </NavLink>
       </div>

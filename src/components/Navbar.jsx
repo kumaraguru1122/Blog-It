@@ -26,16 +26,6 @@ export default function Navbar() {
               Home
             </NavLink>
             <NavLink
-              to="/about"
-              className={({ isActive }) =>
-                isActive
-                  ? "text-blue-600 font-semibold"
-                  : "text-gray-700 hover:text-blue-600"
-              }
-            >
-              About
-            </NavLink>
-            <NavLink
               to="/blogs"
               className={({ isActive }) =>
                 isActive
@@ -44,6 +34,16 @@ export default function Navbar() {
               }
             >
               Blogs
+            </NavLink>
+            <NavLink
+              to="/about"
+              className={({ isActive }) =>
+                isActive
+                  ? "text-blue-600 font-semibold"
+                  : "text-gray-700 hover:text-blue-600"
+              }
+            >
+              About
             </NavLink>
           </div>
 
@@ -70,17 +70,6 @@ export default function Navbar() {
               Home
             </NavLink>
             <NavLink
-              to="/about"
-              onClick={toggleMenu}
-              className={({ isActive }) =>
-                isActive
-                  ? "text-blue-600 font-semibold"
-                  : "text-gray-700 hover:text-blue-600"
-              }
-            >
-              About
-            </NavLink>
-            <NavLink
               to="/blogs"
               onClick={toggleMenu}
               className={({ isActive }) =>
@@ -90,6 +79,17 @@ export default function Navbar() {
               }
             >
               Blogs
+            </NavLink>
+            <NavLink
+              to="/about"
+              onClick={toggleMenu}
+              className={({ isActive }) =>
+                isActive
+                  ? "text-blue-600 font-semibold"
+                  : "text-gray-700 hover:text-blue-600"
+              }
+            >
+              About
             </NavLink>
           </div>
         )}
