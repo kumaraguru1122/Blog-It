@@ -14,7 +14,7 @@ const BlogCard = ({ id, title }) => {
         <button></button>
         <NavLink
           to={`${id}`}
-          className="bg-amber-950 text-amber-50 p-2 rounded-md"
+          className=" bg-slate-950 text-white p-2 rounded-md"
         >
           click to view
         </NavLink>

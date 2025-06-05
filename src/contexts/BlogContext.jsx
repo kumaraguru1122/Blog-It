@@ -1,54 +1,36 @@
-import { createContext } from "react";
+import { Children, createContext, useEffect, useState } from "react";
+import blogData from "../data/blogs.json";
 
 export const BlogContext = createContext();
 
 const BlogProvider = ({ children }) => {
-  let blogContent = {
-    blogs: [
-      {
-        id: 1,
-        title: "blog post one",
-      },
-      {
-        id: 2,
-        title: "blog post two",
-      },
-      {
-        id: 3,
-        title: "blog post three",
-      },
-      {
-        id: 4,
-        title: "blog post four",
-      },
-      {
-        id: 5,
-        title: "blog post five",
-      },
-      {
-        id: 6,
-        title: "blog post six",
-      },
-      {
-        id: 7,
-        title: "blog post seven",
-      },
-      {
-        id: 8,
-        title: "blog post eight",
-      },
-      {
-        id: 9,
-        title: "blog post nine",
-      },
-      {
-        id: 10,
-        title: "blog post ten",
-      },
-    ],
+  const [blogs, setBlogs] = useState([]);
+
+  console.log(blogData);
+  
+
+  useEffect(() => {
+    setBlogs(blogData);
+  }, []);
+
+  const createBlog = (newBlog) => {
+    setBlogs((prev) => [prev, newBlog]);
   };
+
+  const updateBlog = (updateBlog) => {
+    setBlogs((prev) =>
+      prev.map((blog) => (blog.id === updateBlog.id ? updateBlog : blog))
+    );
+  };
+
+  const deleteBlog = (id) => {
+    setBlogs((prev) => prev.filter((blog) => blog.id !== id));
+  };
+
   return (
-    <BlogContext.Provider value={blogContent}>{children}</BlogContext.Provider>
+    <BlogContext.Provider value={{ blogs, createBlog, updateBlog, deleteBlog }}>
+      {children}
+    </BlogContext.Provider>
   );
 };
 

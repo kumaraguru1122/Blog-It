@@ -10,7 +10,7 @@ const BlogDetail = () => {
 
   const blog = blogs.find((blog) => blog.id == id);
 
- let blogContent = `
+  let blogContent = `
 
 ## Fatis huc orbe iam
 
@@ -51,14 +51,14 @@ postes. Arce statque umeris prolemque animam, est quoque iunget.
 Posset Thyneius tenero inplicuit postquam fortunaeque holus, senectus inposita.
 Simulacraque denos caedis regis, dubiam? Satis quoque?
 
-  `
+  `;
 
   return (
     <div className="p-4">
       <h1 className="text-4xl mx-auto max-w-3xl mb-4  font-bold ">
         {blog.title}
       </h1>
-      <div className="mx-auto max-w-3xl  prose-h2:text-green-400 prose">
+      <div className="mx-auto max-w-3xl prose">
         <ReactMarkdown>{blogContent}</ReactMarkdown>
       </div>
     </div>

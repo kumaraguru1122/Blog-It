@@ -1,7 +1,7 @@
 import React from "react";
 
 const Footer = () => {
-  return <div className="h-20 bg-amber-950 text-amber-50 flex justify-between items-center p-4  ">
+  return <div className="h-20 bg-slate-900 text-slate-50 flex justify-between items-center p-4  ">
     <div className="text-2xl font-bold">BlogIt.</div>
     <ul className="flex gap-4 justify-center">
         <li>Instagram</li>
