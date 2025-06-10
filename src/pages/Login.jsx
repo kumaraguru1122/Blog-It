@@ -1,11 +1,11 @@
 import React, { useState, useContext } from "react";
-import { UserContext } from "../contexts/UserContext"; // Import context with correct name
-import { useNavigate } from "react-router";
+import { UserContext } from "../contexts/UserContext";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const { user, login, logout, register } = useContext(UserContext); // Use UserContext correctly
+  const { user, login, logout, register } = useContext(UserContext);
   const navigate = useNavigate();
 
   console.log(user);
@@ -13,18 +13,20 @@ const Login = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Check if the user already exists or perform actual login validation
-    const userData = { email, password }; // Adding the password as part of the login data
-    login(userData); // Updating the context with the user data
+    const userData = { email, password };
+    login(userData);
 
     console.log("Logged in successfully...");
 
-    navigate("/profile"); // Redirect after successful login
+    navigate("/profile");
   };
 
   return (
     <div className="grid place-content-center min-h-[80vh]">
-      <form onSubmit={handleSubmit} className="max-w-[400px] md-auto border-2 p-4 rounded-md border-slate-900 space-y-4">
+      <form
+        onSubmit={handleSubmit}
+        className="max-w-[400px] md-auto border-2 p-4 rounded-md border-slate-900 space-y-4"
+      >
         <h2 className="text-2xl font-bold text-center">Login</h2>
         <input
           type="email"

@@ -1,6 +1,6 @@
 import React, { useState, useContext } from "react";
 import { BlogContext } from "../contexts/BlogContext";
-import { useNavigate } from "react-router";
+import { useNavigate } from "react-router-dom";
 
 const BlogEditor = () => {
   const { createBlog } = useContext(BlogContext);

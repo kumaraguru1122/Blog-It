@@ -1,7 +1,7 @@
 import React from "react";
 import { BlogContext } from "../contexts/BlogContext";
 import { useContext } from "react";
-import { useParams } from "react-router";
+import { useParams } from "react-router-dom";
 import ReactMarkdown from "react-markdown";
 
 const BlogDetail = () => {
